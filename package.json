@@ -1,43 +1,28 @@
 {
-	"name": "lucia",
+	"name": "lucia-documentation",
+	"type": "module",
 	"version": "0.0.1",
-	"description": "monorepo for lucia-auth",
+	"private": true,
 	"scripts": {
-		"ready": "pnpm i && cd packages/lucia-auth && pnpm build && pnpm i && cd ../adapter-test && pnpm build && pnpm i && cd ../integration-oauth && pnpm build && cd ../adapter-prisma && pnpm build && cd ../integration-tokens && pnpm build && cd .. && pnpm install --no-frozen-lockfile",
-		"publish-setup": "cd packages/lucia-auth && pnpm i --no-frozen-lockfile && pnpm build && cd ../../ && cd packages/adapter-test && pnpm i --no-frozen-lockfile && pnpm build && cd ../../ && pnpm i --no-frozen-lockfile",
-		"format": "pnpm exec prettier --write .",
-		"preinstall": "npx only-allow pnpm",
-		"auri.format": "pnpm format",
-		"auri.publish_setup": "pnpm publish-setup"
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"auri.deploy": "curl -X POST $VERCEL_DEPLOY_HOOK",
+		"generate": "vite-node scripts/generate.ts"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/pilcrowOnPaper/lucia"
+	"dependencies": {
+		"@astrojs/solid-js": "2.2.0",
+		"@astrojs/tailwind": "^3.1.3",
+		"@astrojs/vercel": "^3.4.0",
+		"astro": "^2.5.0",
+		"gray-matter": "^4.0.3",
+		"solid-js": "1.7.5",
+		"tailwindcss": "^3.3.2"
 	},
-	"keywords": [],
-	"author": "pilcrowOnPaper",
-	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "~18.15.13",
-		"@typescript-eslint/eslint-plugin": "^5.59.6",
-		"@typescript-eslint/parser": "^5.59.6",
-		"auri": "^0.5.4",
-		"eslint": "^8.40.0",
-		"eslint-config-prettier": "^8.8.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"prettier": "^2.8.8",
-		"prettier-plugin-svelte": "^2.10.0",
-		"prettier-plugin-tailwindcss": "^0.2.8",
-		"shx": "^0.3.4",
-		"typescript": "~5.0.4"
-	},
-	"resolutions": {
-		"lucia-auth": "workspace:*",
-		"@lucia-auth/adapter-prisma": "workspace:*",
-		"@lucia-auth/oauth": "workspace:*"
-	},
-	"engines": {
-		"node": "16.x - 20.x",
-		"pnpm": "*"
+		"rehype": "^12.0.1",
+		"siena": "^0.3.0"
 	}
 }

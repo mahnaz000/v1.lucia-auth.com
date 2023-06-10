@@ -6,18 +6,13 @@ node_modules
 .env
 .env.*
 !.env.example
-/.vscode
-/.auri/*.md
-/test-apps/*/.svelte-kit
-/test-apps/*/.next
-/test-apps/*/.nuxt
-/examples/*/.svelte-kit
-/examples/*/.next
-/examples/*/.nuxt
-/packages/*/dist
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
 
+.vercel
+.cela_generated
+.github.json
+.search.json
